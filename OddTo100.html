@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Odd Numbers between 0 to 100</title>
+</head>
+
+<body>
+<div class="container">
+<h1>Odd Numbers, <br />from 0...100.</h1>
+<p id="p1"></p><!--to be filled in by loop output-->
+</div> <!--closes container-->
+
+
+<style>
+
+body{
+	background-color: #DED4B9;
+	font-family: "Arial";
+}
+
+.container{
+	position:relative;
+	width:400px;
+	margin: 0 auto;
+	/*background-color: black;*/
+	margin-top: 10%;
+
+}
+
+h1 {
+	position:relative;
+	left:0px;
+	margin:0px;
+	padding-left:10%;
+	width:90%;
+	border-color: #64B6B1;
+	border-style: solid;
+	border-width: 3px;
+	color:#64B6B1;
+}
+
+#p1{
+	position: relative;
+	margin: 0 auto;
+	width:365px;
+	height:auto;
+	color:#46433A;
+	/*background-color: #FDF6DD;*/
+	font-size: 24pt;;
+	padding:30px;
+}
+</style>
+
+</body>
+
+<script>
+var counter;
+var displayString = "";
+
+for(counter = 0; counter <= 100; counter++){
+
+	if(counter%2 != 0){
+		console.log(counter);
+		if(counter > 1){
+			displayString += ", " + counter.toString();
+		}
+		else
+		displayString += " " + counter.toString();
+		document.getElementById("p1").innerHTML = displayString;
+
+	}
+}
+</script>
+
+</html>

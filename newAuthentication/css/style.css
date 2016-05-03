@@ -1,0 +1,14 @@
+#container{
+	position:relative;
+	width:400px;
+	margin: 0 auto;
+	/*background-color: black;*/
+	margin-top: 10%;
+  line-height: 2;
+
+}
+
+/*#newAccountRegister{
+display: none;
+
+}*/

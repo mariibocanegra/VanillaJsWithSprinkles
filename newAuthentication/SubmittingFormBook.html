@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+  <!-- installing Firebase Simple Login -->
+  <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js" ></script>
+  <!-- installing Firebase library if needed -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'> </script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<div id = "container">
+<form id="login" action="/login" method="post">
+  <div class="two-thirds column" id="main">
+    <fieldset>
+      <legend id="descript">Sign In</legend>
+
+      <div id="alreadyExists">
+          Username:
+          <input type="text" id="username" name="username" /> </br>
+          Password:
+          <input type="password" id="pwd" name="pwd" /></br>
+
+          <input type = "checkbox" id="remember" /> <i>Remember Me</i></br>
+
+          <input type="submit" value="Login" onclick=“authClient()” />
+          <input type="button" value="Sign Up" onclick="newAccountDisplay()" />
+      </div><!-- closes already exists -->
+
+      <div id = "newAccountRegister" style="display:none">
+          <label for="email">Email:</label>
+          <input type="text" id="mail" name="email" /> </br>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" /> </br>
+          <label for="pwd"> Password:</label>
+           <!-- consider adding second field to confirm password -->
+          <input type="password" id="pwd" name="pwd" /></br>
+          <input type="submit" value="Register" onclick=“authClient()” />
+      </div> <!--closes newAccountRegister div-->
+
+      <p>Or sign in with an alternative account:</p>
+      <img src="images/google_32.png">
+      <img src="images/facebook_32.png">
+      <img src="images/linkedin_32.png">
+      <img src="images/twitter_32.png">
+    </fieldset>
+  </div>
+</form>
+</div> <!--closes container-->
+
+</body>
+
+
+<script src="utilities.js"></script>
+<script src="submit-event.js"></script>
+
+<!-- My javascript from "firebase-simple-login" info on GitHub -->
+<script src="FirebaseLogIn.js"></script>
+
+<script>
+
+</script>
