@@ -1,6 +1,6 @@
 // This script was found on the firebase-simple-login
 // my Firebase url
-var myRef = new Firebase("https://blinding-fire-9819.firebaseio.com/");
+var myRef = new Firebase("beesprout.firebaseapp.com");
 
 
 var email = document.getElementById('mail').value;
@@ -38,7 +38,7 @@ authClient.login('password', {
 // we could also read the profile to see if it's null
 // here we will just simulate this with an isNewUser boolean
 var isNewUser = true;
-var myRef = new Firebase("https://blinding-fire-9819.firebaseio.com/");
+var myRef = new Firebase("beesprout.firebaseapp.com");
 var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
   if (error) {}
   else if (user) {
