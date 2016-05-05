@@ -21,6 +21,7 @@
       <legend id="descript">Sign In</legend>
 
       <div id="alreadyExists">
+
           Username:
           <input type="text" id="username" name="username" /> </br>
           Password:
@@ -33,22 +34,22 @@
       </div><!-- closes already exists -->
 
       <div id = "newAccountRegister" style="display:none">
-          <label for="email">Email:</label>
+          Email:
           <input type="text" id="mail" name="email" /> </br>
-          <label for="username">Username:</label>
+          Username:
           <input type="text" id="username" name="username" /> </br>
-          <label for="pwd"> Password:</label>
+          Password:
            <!-- consider adding second field to confirm password -->
           <input type="password" id="pwd" name="pwd" /></br>
-          <input type="submit" value="Register" onclick=“authClient()” /></br>
+          <input type="submit" value="Register" onclick=“authClient.createUser()” /></br>
 
           Already have an account?
-          <input type="submit" value="Log In" onclick=“alreadyExistsDisplay” /></br>
+          <input type="submit" value="Log In" onclick=“alreadyExistsDisplay()” /></br>
 
       </div> <!--closes newAccountRegister div-->
 
       <p>Or sign in with an alternative account:</p>
-      <img src="images/google_32.png" onclick="javascript:authClient"/>
+      <img src="images/google_32.png">
       <img src="images/facebook_32.png">
       <img src="images/linkedin_32.png">
       <img src="images/twitter_32.png">
@@ -62,7 +63,3 @@
 
 <!-- My javascript from "firebase-simple-login" info on GitHub -->
 <script src="FirebaseLogIn.js"></script>
-
-<script>
-
-</script>
