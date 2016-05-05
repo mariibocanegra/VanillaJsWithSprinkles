@@ -1,33 +1,14 @@
 // This script was found on the firebase-simple-login
 // my Firebase url
 var myRef = new Firebase("beesprout.firebaseapp.com");
-
-
 var email = document.getElementById('mail').value;
 var user = document.getElementById('username').value;
 var password = document.getElementById('pwd').value;
 
 
 
-function newAccountDisplay(){
-  document.getElementById('newAccountRegister').style.display='';
-  document.getElementById('alreadyExists').style.display='none';
-  document.getElementById("descript").innerHTML="Sign Up";
-}
 
 
-var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
-authClient.createUser(email, password, function(error, user) {
-  if (error === null) {
-    console.log("User created successfully:", user);
-  } else {
-    console.log("Error creating user:", error);
-  }
-});
-
-
-// This script was found on the firebase-simple-login under the "Authentication Providers" then "Email & Password"
-// I THOUGHT THIS WOULD OPEN AND ALLOW THE USER TO LOG IN
 var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
 authClient.login('password', {
  email: '<email@domain.com>',
@@ -38,7 +19,8 @@ authClient.login('password', {
 // we could also read the profile to see if it's null
 // here we will just simulate this with an isNewUser boolean
 var isNewUser = true;
-var myRef = new Firebase("beesprout.firebaseapp.com");
+
+
 var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
   if (error) {}
   else if (user) {
@@ -56,9 +38,44 @@ var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {
 });
 
 
-// // perform the login (to Facebook in this case) I THOUGHT THIS WOULD OPEN AND ALLOW THE USER TO LOG IN WITH FACEBOOK
-// authClient.login('facebook');
+//Google Authentication:
+
+//if user doesn't have an existing session
 
 
-//logging in with facebook
-//first, need to sign up for fb for developers
+
+
+authClient.login('google');
+
+
+//end of google section
+
+
+
+
+
+
+
+
+//page display -- logging in or making new account
+function newAccountDisplay(){
+  document.getElementById('newAccountRegister').style.display='';
+  document.getElementById('alreadyExists').style.display='none';
+  document.getElementById("descript").innerHTML="Sign Up";
+}
+
+
+function alreadyExistsDisplay(){
+  document.getElementById('newAccountRegister').style.display='none';
+  document.getElementById('alreadyExists').style.display='';
+  document.getElementById("descript").innerHTML="Sign In";
+}
+
+var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
+authClient.createUser(email, password, function(error, user) {
+  if (error === null) {
+    console.log("User created successfully:", user);
+  } else {
+    console.log("Error creating user:", error);
+  }
+});

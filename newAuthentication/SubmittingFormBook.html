@@ -40,11 +40,15 @@
           <label for="pwd"> Password:</label>
            <!-- consider adding second field to confirm password -->
           <input type="password" id="pwd" name="pwd" /></br>
-          <input type="submit" value="Register" onclick=“authClient()” />
+          <input type="submit" value="Register" onclick=“authClient()” /></br>
+
+          Already have an account?
+          <input type="submit" value="Log In" onclick=“alreadyExistsDisplay” /></br>
+
       </div> <!--closes newAccountRegister div-->
 
       <p>Or sign in with an alternative account:</p>
-      <img src="images/google_32.png">
+      <img src="images/google_32.png" onclick="javascript:authClient"/>
       <img src="images/facebook_32.png">
       <img src="images/linkedin_32.png">
       <img src="images/twitter_32.png">
@@ -55,9 +59,6 @@
 
 </body>
 
-
-<script src="utilities.js"></script>
-<script src="submit-event.js"></script>
 
 <!-- My javascript from "firebase-simple-login" info on GitHub -->
 <script src="FirebaseLogIn.js"></script>
