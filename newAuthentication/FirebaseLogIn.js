@@ -28,11 +28,11 @@ authClient.createUser(email, password, function(error, user) {
   }
 });
 
-// var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
-// authClient.login('password', {
-//  email: '<email@domain.com>',
-//  password: '<password>'
-// });
+var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
+authClient.login('password', {
+ email: '<email@domain.com>',
+ password: '<password>'
+});
 
 
 // we would probably save a profile when we register new users on our site
