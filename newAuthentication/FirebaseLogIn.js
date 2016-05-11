@@ -52,27 +52,28 @@ var createUserAction = function(){
   //password validation
   if(pwdNew1.value !== pwdNew2.value){
     document.getElementById("pwdValidation").innerHTML = "Passwords don't match.";
+  } //closes 'if' clause - checks password matching
 
-        myRef.createUser({
-          email: email,
-          password: password
+  else{
 
-        }, function(error, userData) {
+      document.getElementById("pwdValidation").innerHTML = ""; //validation message dissapears when passwords match
+      myRef.createUser({
+        email: email,
+        password: password
 
-          if(error) {
-            console.log("Error creating user:", error);
-          } else {
-            console.log("Successfully created user account with uid: ", userData.uid);
-          }
-          });
-    } //closes createUserAction -- user account is only made if passwords match.
+      }, function(error, userData) {
 
-
-
-
+        if(error) {
+          console.log("Error creating user:", error);
+        } else {
+          console.log("Successfully created user account with uid: ", userData.uid);
+        }
+        });
 
 
-  }//closes validation
+      }//closes else for password validation - accounts are made here
+
+  }//closes createUserAction -- user account is only made if passwords match.
 
 
 
