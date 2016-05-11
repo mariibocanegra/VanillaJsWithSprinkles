@@ -1,8 +1,8 @@
 var myRef = new Firebase("https://beesprout.firebaseio.com");
 
-var email = document.getElementById('mail').value;
-var password = document.getElementById('pwd').value;
-var user = document.getElementById('username').value;
+// var email = document.getElementById('mail').value;
+// var password = document.getElementById('pwd').value;
+// var user = document.getElementById('username').value;
 
 
 function newAccountDisplay(){
@@ -30,9 +30,9 @@ var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
 //   }
 // });
 var createUserAction = function(){
-  var email = document.getElementById('mail').value;
-  var password = document.getElementById('pwd').value;
-  var user = document.getElementById('username').value;
+  var email = document.getElementById('mailNew1').value;
+  var password = document.getElementById('pwdNew1').value;
+  var user = document.getElementById('usernameNew1').value;
 
 myRef.createUser({
   email: email,
