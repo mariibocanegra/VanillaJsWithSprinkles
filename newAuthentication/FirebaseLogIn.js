@@ -5,6 +5,8 @@ var myRef = new Firebase("https://beesprout.firebaseio.com");
 // var user = document.getElementById('username').value;
 
 
+
+
 function newAccountDisplay(){
   document.getElementById('newAccountRegister').style.display='';
   document.getElementById('alreadyExists').style.display='none';
@@ -44,21 +46,39 @@ var logInAction = function(){
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
   var password = document.getElementById('pwdNew1').value;
-  // var user = document.getElementById('usernameNew1').value;
+  var password2 = document.getElementById('pwdNew2').value;
 
-myRef.createUser({
-  email: email,
-  password: password
 
-}, function(error, userData) {
+  //password validation
+  if(pwdNew1.value !== pwdNew2.value){
+    document.getElementById("pwdValidation").innerHTML = "Passwords don't match.";
 
-  if(error) {
-    console.log("Error creating user:", error);
-  } else {
-    console.log("Successfully created user account with uid: ", userData.uid);
-  }
-  });
-} //closes createUserAction
+        myRef.createUser({
+          email: email,
+          password: password
+
+        }, function(error, userData) {
+
+          if(error) {
+            console.log("Error creating user:", error);
+          } else {
+            console.log("Successfully created user account with uid: ", userData.uid);
+          }
+          });
+    } //closes createUserAction -- user account is only made if passwords match.
+
+
+
+
+
+
+  }//closes validation
+
+
+
+
+
+
 
 
 

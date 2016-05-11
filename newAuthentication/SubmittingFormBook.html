@@ -36,11 +36,13 @@
       <div id = "newAccountRegister" style="display:none">
           Email:
           <input type="text" id="mailNew1" name="email" /> </br>
-          Username:
-          <input type="text" id="usernameNew1" name="usernameNew1" /> </br>
           Password:
            <!-- consider adding second field to confirm password -->
           <input type="password" id="pwdNew1" name="pwdNew1" /></br>
+          Confirm Password:
+          <input type="password" id="pwdNew2" name="pwdNew2" /> </br>
+          <h3 id = pwdValidation></h3> 
+
           <!-- <input type="submit" value="Register" onclick=“authClient.createUser()” /></br> -->
           <input type = "button" value="Register" onclick="createUserAction()" /></br>
           <p>Already have an account?</p>
