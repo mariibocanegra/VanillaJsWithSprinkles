@@ -27,6 +27,7 @@ var logInAction = function(){
       console.log("Login Failed!", error);
     } else {
       console.log("Authenticated successfully with payload:", authData);
+      window.location = "YourPlants/index.html"; //redirects after log in?
     }
   });
 
