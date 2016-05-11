@@ -1,10 +1,5 @@
 var myRef = new Firebase("https://beesprout.firebaseio.com");
 
-// var email = document.getElementById('mail').value;
-// var password = document.getElementById('pwd').value;
-// var user = document.getElementById('username').value;
-
-
 
 
 function newAccountDisplay(){
@@ -39,10 +34,6 @@ var logInAction = function(){
 }//closes logInAction
 
 
-//
-// var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
-
-
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
   var password = document.getElementById('pwdNew1').value;
@@ -69,6 +60,7 @@ var createUserAction = function(){
           console.log("Successfully created user account with uid: ", userData.uid);
         }
         });
+        alreadyExistsDisplay();
 
 
       }//closes else for password validation - accounts are made here
