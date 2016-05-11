@@ -18,21 +18,33 @@ function alreadyExistsDisplay(){
   document.getElementById("descript").innerHTML="Sign In";
 }
 
+var logInAction = function(){
+  var email = document.getElementById('mail').value;
+  var password = document.getElementById('pwd').value;
+  // var user = document.getElementById('usernameNew1').value;
+  myRef.authWithPassword({
+    email: email,
+    password: password
+  }, function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });
 
 
+}//closes logInAction
 
-var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
-// authClient.createUser(email, password, function(error, user) {
-//   if (error === null) {
-//     console.log("User created successfully:", user);
-//   } else {
-//     console.log("Error creating user:", error);
-//   }
-// });
+
+//
+// var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
+
+
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
   var password = document.getElementById('pwdNew1').value;
-  var user = document.getElementById('usernameNew1').value;
+  // var user = document.getElementById('usernameNew1').value;
 
 myRef.createUser({
   email: email,
@@ -49,11 +61,7 @@ myRef.createUser({
 } //closes createUserAction
 
 
-// var authClient = new FirebaseSimpleLogin(myRef, function(error, user) {});
-// authClient.login('password', {
-//  email: '<email@domain.com>',
-//  password: '<password>'
-// });
+
 
 
 
