@@ -26,11 +26,12 @@
           <input type="text" id="mail" name="email" /> </br>
           Password:
           <input type="password" id="pwd" name="pwd" /></br>
+          <a href="#" onclick="changePwdDisplay()" id ="forgotPwdLink"> Forgot password?</a>
 
-          <input type = "checkbox" id="remember" /> <i>Remember Me</i></br>
-
+        </br>
           <input type = "button" value ="Log In" onclick="logInAction()" />
           <input type="button" value="Sign Up" onclick="newAccountDisplay()" />
+          <input type = "checkbox" id="remember" /> <i>Remember Me</i></br>
       </div><!-- closes already exists -->
 
       <div id = "newAccountRegister" style="display:none">
@@ -49,6 +50,21 @@
           <input type="submit" value="Log In" onclick=“alreadyExistsDisplay()” /></br>
 
       </div> <!--closes newAccountRegister div-->
+
+      <div id="forgotPwd" style="display:none">
+
+          E-mail:
+          <input type="text" id="mailPwdReset" name="email" /> </br>
+
+        </br>
+          <input type = "button" value ="Reset" onclick="sendResetEmail()" />
+          <h3 id = emailSentValidation></h3>
+
+      </div><!-- closes already exists -->
+
+
+
+
 
       <p>Or sign in with an alternative account:</p>
       <img src="images/google_32.png">

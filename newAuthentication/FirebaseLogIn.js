@@ -15,6 +15,14 @@ function alreadyExistsDisplay(){
   document.getElementById("descript").innerHTML="Sign In";
 }
 
+function changePwdDisplay(){
+  document.getElementById('newAccountRegister').style.display='none';
+  document.getElementById('alreadyExists').style.display='none';
+  document.getElementById('forgotPwd').style.display='';
+  document.getElementById("descript").innerHTML="Reset Password";
+
+}
+
 var logInAction = function(){
   var email = document.getElementById('mail').value;
   var password = document.getElementById('pwd').value;
@@ -70,7 +78,23 @@ var createUserAction = function(){
 
 
 
+var sendResetEmail = function(){
 
+  var email = document.getElementById('mailPwdReset').value;
+  myRef.resetPassword({
+  email : email
+}, function(error) {
+  if (error === null) {
+    console.log("Password reset email sent successfully");
+    document.getElementById("emailSentValidation").innerHTML = "Password Reset E-mail sent";
+  } else {
+    console.log("Error sending password reset email:", error);
+    document.getElementById("emailSentValidation").innerHTML = "Error sending Reset E-mail";
+  }
+
+
+});
+}
 
 
 
