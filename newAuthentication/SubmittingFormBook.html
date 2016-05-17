@@ -26,19 +26,22 @@
           <input type="text" id="mail" name="email" /> </br>
           Password:
           <input type="password" id="pwd" name="pwd" /></br>
+          <input type = "checkbox" id="remember" /> <i>Remember Me</i></br>
           <a href="#" onclick="changePwdDisplay()" id ="forgotPwdLink"> Forgot password?</a>
 
         </br>
           <input type = "button" value ="Log In" onclick="logInAction()" />
           <input type="button" value="Sign Up" onclick="newAccountDisplay()" />
-          <input type = "checkbox" id="remember" /> <i>Remember Me</i></br>
+
       </div><!-- closes already exists -->
 
       <div id = "newAccountRegister" style="display:none">
           Email:
           <input type="text" id="mailNew1" name="email" /> </br>
+
+          Username:
+            <input type="text" id="userNew1" name="userName" /> </br>
           Password:
-           <!-- consider adding second field to confirm password -->
           <input type="password" id="pwdNew1" name="pwdNew1" /></br>
           Confirm Password:
           <input type="password" id="pwdNew2" name="pwdNew2" /> </br>
@@ -57,9 +60,9 @@
           <input type="text" id="mailPwdReset" name="email" /> </br>
 
         </br>
-          <input type = "button" value ="Reset" onclick="sendResetEmail()" />
+          <input type = "button" value ="Reset" id="resetPwdButton" onclick="sendResetEmail()" />
           <h3 id = emailSentValidation></h3>
-
+          <input type = "button" value ="Log In" id="logInButton" onclick="alreadyExistsDisplay()" style="display:none"/>
       </div><!-- closes already exists -->
 
 

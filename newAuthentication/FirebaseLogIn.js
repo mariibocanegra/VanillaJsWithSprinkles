@@ -5,6 +5,7 @@ var myRef = new Firebase("https://beesprout.firebaseio.com");
 function newAccountDisplay(){
   document.getElementById('newAccountRegister').style.display='';
   document.getElementById('alreadyExists').style.display='none';
+  document.getElementById('forgotPwd').style.display='none';
   document.getElementById("descript").innerHTML="Sign Up";
 }
 
@@ -12,6 +13,7 @@ function newAccountDisplay(){
 function alreadyExistsDisplay(){
   document.getElementById('newAccountRegister').style.display='none';
   document.getElementById('alreadyExists').style.display='';
+  document.getElementById('forgotPwd').style.display='none';
   document.getElementById("descript").innerHTML="Sign In";
 }
 
@@ -45,6 +47,7 @@ var logInAction = function(){
 
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
+  var userName = document.getElementById(usernameNew1).value;
   var password = document.getElementById('pwdNew1').value;
   var password2 = document.getElementById('pwdNew2').value;
 
@@ -69,6 +72,11 @@ var createUserAction = function(){
           console.log("Successfully created user account with uid: ", userData.uid);
         }
         });
+
+
+
+
+
         alreadyExistsDisplay();
 
 
@@ -87,6 +95,9 @@ var sendResetEmail = function(){
   if (error === null) {
     console.log("Password reset email sent successfully");
     document.getElementById("emailSentValidation").innerHTML = "Password Reset E-mail sent";
+      document.getElementById("resetPwdButton").style.display='none';
+      document.getElementById("logInButton").style.display='';
+
   } else {
     console.log("Error sending password reset email:", error);
     document.getElementById("emailSentValidation").innerHTML = "Error sending Reset E-mail";
