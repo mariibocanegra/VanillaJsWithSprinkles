@@ -59,6 +59,11 @@ var printUserAction = function(){
 });
 }
 
+var addPlant = function() {
+  var authData = myRef.getAuth();
+  myRef.child('users').child(authData.uid).child('plants').push(document.getElementById('plant1Name').value);
+}
+
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
   // var userName = document.getElementById(usernameNew1).value;
