@@ -25,6 +25,9 @@ function changePwdDisplay(){
 
 }
 
+
+var userID;
+
 var logInAction = function(){
   var email = document.getElementById('mail').value;
   var password = document.getElementById('pwd').value;
@@ -38,16 +41,32 @@ var logInAction = function(){
     } else {
       console.log("Authenticated successfully with payload:", authData);
       window.location = "YourPlants/index.html"; //redirects after log in?
+      userID = authData.uid;
+      // document.getElementById('greeting');
     }
   });
 
 
 }//closes logInAction
 
+var printUserAction = function(){
+  var authData = myRef.getAuth();
+  var uid = authData.uid;
+  myRef.child("users").child(uid).child("email").once("value", function(snapshot) {
+    console.log(snapshot.val());
+  }, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+}
+
+var addPlant = function() {
+  var authData = myRef.getAuth();
+  myRef.child('users').child(authData.uid).child('plants').push(document.getElementById('plant1Name').value);
+}
 
 var createUserAction = function(){
   var email = document.getElementById('mailNew1').value;
-  var userName = document.getElementById(usernameNew1).value;
+  // var userName = document.getElementById(usernameNew1).value;
   var password = document.getElementById('pwdNew1').value;
   var password2 = document.getElementById('pwdNew2').value;
 
@@ -70,6 +89,13 @@ var createUserAction = function(){
           console.log("Error creating user:", error);
         } else {
           console.log("Successfully created user account with uid: ", userData.uid);
+
+          myRef.child('users').child(userData.uid).set({
+            email: email,
+            password: password,
+            plants: ['asparagus', 'onion', 'grapes']
+          })
+
         }
         });
 
