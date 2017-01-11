@@ -1,6 +1,15 @@
-var myRef = new Firebase("https://beesprout.firebaseio.com");
+// var myRef = new Firebase("https://beesprout.firebaseio.com");
 
+  // Initialize Firebase
+  // var config = {
+  //   apiKey: "AIzaSyAjShW3RMs2KEpo2G5Nsz4gP3rp9I9RT-E",
+  //   authDomain: "beesprout.firebaseapp.com",
+  //   databaseURL: "https://beesprout.firebaseio.com",
+  //   storageBucket: "project-551339853192421155.appspot.com",
+  // };
+  // firebase.initializeApp(config);
 
+var rootRef = firebase.database().ref();
 
 function newAccountDisplay(){
   document.getElementById('newAccountRegister').style.display='';
