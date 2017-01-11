@@ -12,8 +12,8 @@
     <script type="text/javascript">
 
     var dataset = [];
-    for(var i=0; i<25; i++) {
-      var newNumber = Math.random() *70;
+    for(var i=0; i<25; i++) { //array will consist of 25 items
+      var newNumber = Math.random() *70; //Max = 70
       dataset.push(newNumber);
     }
 
@@ -33,15 +33,15 @@
 
 
       .style("background-color", function(d) {
-        if (d>=30 && d<60) { //Threshold of 15
+        if (d>=30 && d<60) { //orange if 30-59
             return "orange";
         }
-        else if (d>=50) {
+        else if (d>=50) { //red if 50+ (50-70)
           return "red";
         }
 
         else{
-          return "yellow";
+          return "yellow"; //yellow if 1-29
         }});
 
 
@@ -53,7 +53,6 @@ div.bar{
   display: inline-block;
   width:20px;
   height: 75px;
-  /*background-color: teal;*/
   margin-right: 2px;
 
 }
